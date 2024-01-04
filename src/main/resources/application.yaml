@@ -1,0 +1,34 @@
+Spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/hospitalportal?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC&useLegacyDatatimeCode=false
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: TRACE
+        SQL: DEBUG
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 348759d01b2ce2fd10dc
+            client-secret: 3de2201315935f841c5aa400e2ee90a8adb6a969
+          google:
+            client-id: 595534916531-85jdd88sj5gqqbqldhmhig69u36ugc7s.apps.googleusercontent.com
+            client-secret: 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
+            redirectUriTemplate: "{baseUrl}/login/oauth2/code/google"
+
